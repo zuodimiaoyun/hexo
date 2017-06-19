@@ -34,7 +34,7 @@ ul {
   list-style: none;
 }
 a {
-  color: #6ecff5;
+  color: #00b5ad;
   text-decoration: none;
 }
 a:hover {
@@ -219,7 +219,7 @@ pre .javascript .function {
   text-decoration: underline;
 }
 .box-header {
-  background-color: #6ecff5;
+  background-color: #00b5ad;
 }
 @media screen and (max-width: 700px) {
   .layout-content {
