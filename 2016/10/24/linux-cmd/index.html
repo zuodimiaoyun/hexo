@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title> Linux相关操作 | 条条大路通... </title>
+	<meta property="og:title" content=" Linux相关操作 | 条条大路通... " />
+	<meta name="twitter:title" content=" Linux相关操作 | 条条大路通... ">
+
+	<meta property="og:type" content="article">
+	<meta name="twitter:card" content="summary">
+
+	<meta name="description" content=" Linux相关操作 | 条条大路通... ">
+	<meta property="og:description" content=" Linux相关操作 | 条条大路通... " />
+	<meta name="twitter:description" content=" Linux相关操作 | 条条大路通... " />
+
+	<link rel="icon" type="image/x-icon" href="http://yoursite.com/blog/asset/img/favicon.png">
+
+	<link rel="image_src" href="http://yoursite.com/blog/asset/img/logo.png" >
+	<meta property="og:image" content="http://yoursite.com/blog/asset/img/logo.png" />
+
+	<link href="http://yoursite.com/blog/atom.xml" title="条条大路通..." type="application/atom+xml" rel="alternative">
+
+	<link rel="canonical" href="/blog/2016/10/24/linux-cmd/index.html">
+
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.19.3/css/semantic.min.css">
+	<link rel="stylesheet" href="/blog/asset/css/style.css">
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.19.3/javascript/semantic.min.js"></script>
+
+</head>
+
+<body>
+
+
+	<div class="layout-header">
+		<div class="ui fixed transparent inverted main menu panel-header">
+			<div class="container box-header">
+				<div class="title item header-item">
+					<a href="/blog/blog/" title="null">条条大路通...</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="layout-menu">
+
+		<nav class="ui transparent vertical inverted labeled icon menu">
+
+			<a class="item" href="/blog/">
+				<i class="home icon"></i>
+				Home
+			</a>
+
+			<a class="item" href="/blog/archives">
+				<i class="sitemap icon"></i>
+				Sitemap
+			</a>
+
+			<a class="item" href="/blog/page/">
+				<i class="browser icon"></i>
+				Page
+			</a>
+
+		</nav>
+
+	</div>
+
+	<div class="layout-menu-footer">
+
+		<nav class="ui transparent inverted menu">
+
+			<a class="item" href="/blog/">
+				<i class="home icon"></i>
+				Home
+			</a>
+
+			<a class="item" href="/blog/archives">
+				<i class="sitemap icon"></i>
+				Sitemap
+			</a>
+
+			<a class="item" href="/blog/page/">
+				<i class="browser icon"></i>
+				Page
+			</a>
+
+		</nav>
+
+	</div>
+
+
+
+	<div class="layout-content">
+
+
+		<div class="panel-content">
+			<div class="ui grid box-content">
+				<div class="two wide column">
+					&nbsp;
+				</div>
+
+				<div class="twelve wide column">
+
+					<div class="box-post-item">
+						<article class="post-item" itemscope itemtype="http://schema.org/Article">
+
+
+
+
+							<p class="content-meta">
+								<span class="meta-date" itemprop="datePublished" content="2016-10-24">2016-10-24</span>
+
+
+							</p>
+
+
+							<h2 class="box-content-title">
+								<a href="/blog/2016/10/24/linux-cmd/"  itemprop="url"><span class="content-title" itemprop="name">Linux相关操作</span></a>
+							</h2>
+
+							<div class="content post-item-content" itemprop="articleBody">
+
+<h3 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ useradd [username]</div><div class="line">$ passwd [username]</div></pre></td></tr></table></figure>
+<h3 id="添加sudoers"><a href="#添加sudoers" class="headerlink" title="添加sudoers"></a>添加sudoers</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">1. $ chmod +w /etc/sudoers</div><div class="line">2. $ vi /etc/sudoers</div><div class="line">3. 修改文件</div><div class="line">4. $ chmod -w /etc/sudoers</div></pre></td></tr></table></figure>
+<p>第3步：找到“root    ALL=(ALL)       ALL”一行，在下面加上一行：”[username]    ALL=(ALL)       ALL“。<br>意为让[username] 可以执行所有命令。</p>
+<h3 id="系统日志"><a href="#系统日志" class="headerlink" title="系统日志"></a>系统日志</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ vi /etc/rsyslog.conf</div><div class="line">添加 *.warning /var/log/syslog</div></pre></td></tr></table></figure>
+<h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ tar zxvf FileName 解压到当前目录（z支持gzip，x提取文件，v显示操作过程，f指定压缩文件）</div><div class="line">$ tar cvf FileName.tar DirName 打包文件夹（c创建压缩文件）</div><div class="line">$ tar zcvf FileName.tar.gz DirName 压缩文件夹</div><div class="line">$ tar zxvf FileName.tar.gz -C DirName 解压到指定文件夹</div></pre></td></tr></table></figure>
+<h3 id="checksum"><a href="#checksum" class="headerlink" title="checksum"></a>checksum</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ md5 file</div><div class="line">$ shasum -a 1 file</div><div class="line">$ shasum -a 256 file</div></pre></td></tr></table></figure>
+<h3 id="apt-get"><a href="#apt-get" class="headerlink" title="apt-get"></a>apt-get</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/etc/apt/sources.list 源列表</div><div class="line">$ apt-get update 更新软件</div><div class="line">$ apt-get install xx 安装软件</div><div class="line">$ apt-get purge xx 卸载软件</div></pre></td></tr></table></figure>
+
+
+							</div>
+
+
+							<div class="content-tag">
+
+<a class="tag-link" href="/blog/tags/linux/">linux</a>
+
+							</div>
+
+
+
+						</article>
+					</div>
+				</div>
+
+				<div class="two wide column">
+					&nbsp;
+				</div>
+
+			</div>
+
+			<div class="panel-post-nav">
+				<div class="box-post-nav">
+		
+
+					<a href="/blog/blog/2016/10/25/Chicken-Soup/" title="Chicken Soup">&larr; Prev</a>
+
+
+
+
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+	<div class="layout-footer" style="clear: both">
+		<div class="panel-footer">
+			<div class="box-footer">
+				<footer class="footer">
+					<p class="cr">&copy; 2017 <a href="https://github.com/foreachsam/"  target="_blank">pollos</a> </p>
+
+					<span class="theme">Powered: <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme: <a href="https://github.com/foreachsam/hexo-theme-aiki" target="_blank">Aiki</a></span>
+				</footer>
+			</div>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
